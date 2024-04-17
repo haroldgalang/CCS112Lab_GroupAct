@@ -1,0 +1,23 @@
+#preloader {
+  align-items: 50%;
+  justify-items: 50%;
+  align-content: 50%;
+  justify-content: 50%;
+  background: #000;
+  width: 100%;
+  height: 100%;
+  position: fixed !important;
+  z-index: 100;
+}
+
+.parallax-container {
+  height: 100px;
+}
+
+body {
+  font-family: "Cabin", sans-serif;
+}
+#book-cover {
+  object-fit: cover;
+  height: 220px;
+}
