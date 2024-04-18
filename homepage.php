@@ -54,7 +54,7 @@ $(document).ready(function () {
             <li>
                 <div class="user-view">
                     <div class="background">
-                        <img class="responsive-img" src="images/TheInternational2023.png">
+                        <img class="responsive-img" src="images/imageRes/pnc.png">
                     </div>
                     <a href="#user"><img class="circle" src="https://th.bing.com/th/id/OIP.3_rmocxtbNOqkWF4cCFkdwAAAA?rs=1&pid=ImgDetMain"></a>
                     <a href="#name"><span class="white-text name">OG Notail</span></a>

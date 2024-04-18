@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Kaisei+Tokumin&display=swap" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="css/style.css" />
-    <title>Library Management</title>
+    <title>Sticker Shop</title>
 </head>
 
 <body class="grey darken-4 white-text text-darken-3">
@@ -18,7 +18,7 @@
     </div>
 
     <div class="parallax-container z-depth-2">
-        <div class="parallax"><img class="responsive-img" src="images/books.jpg"></div>
+        <div class="parallax"><img class="responsive-img" src="images/imageRes/monoWallpaper.png"></div>
         <div class="container">
             <h1 class="center" style="font-family: 'Kaisei Tokumin', serif; color: #6d4c41;">Sticker Shop</h1>
         </div>
