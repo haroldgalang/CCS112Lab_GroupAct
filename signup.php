@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $database = "prelimdb";
+    $database = "ccs112lab";
 
     $conn = new mysqli($servername, $username, $password, $database);
 
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
     // Prepare and execute the INSERT query
-    $stmt = $conn->prepare("INSERT INTO tblUsers (username, password) VALUES (?, ?)");
+    $stmt = $conn->prepare("INSERT INTO tblusers (username, password) VALUES (?, ?)");
     $stmt->bind_param("ss", $username, $password);
     $stmt->execute();
 

@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $database = "prelimdb";
+        $database = "ccs112lab";
 
         $conn = new mysqli($servername, $username, $password, $database);
 
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $password = $_POST['password'];
         $username = $_POST['username'];
 
-        $stmt = $conn->prepare("SELECT * FROM tblUsers WHERE username = ? AND password = ?");
+        $stmt = $conn->prepare("SELECT * FROM tblusers WHERE username = ? AND password = ?");
         $stmt->bind_param("ss", $username, $password);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -44,55 +44,50 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
-    <link rel="stylesheet" href="style.css">
-    <script src="./script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Kaisei+Tokumin&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <title>Sticker Shop</title>
 </head>
 
-<body>
-    <div class="login-form">
-        <form action="login.php" method="POST"> <!-- Specify method as POST -->
-            <h1 style="text-align: center; color: green; font-weight: bold;">LOGIN</h1>
-            <div class="content">
-                <div class="input-field">
-                    <input type="text" name="username" placeholder="Username" autocomplete="nope"> <!-- Add name attribute for username -->
-                </div>
-                <div class="input-field">
-                    <input type="password" name="password" placeholder="Password" autocomplete="new-password"> <!-- Add name attribute for password -->
-                    <br>
-                    <div id="notification" style="color: #FF0000;"></div>
-                    <br>
-                    <div class="action">
-                        <button type="submit" name="register">Register</button>
-                        <button type="submit">Sign in</button>
+<body class="grey darken-4 white-text text-darken-3">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 offset-l3">
+                <div class="card" style="background-image: url(images/imageRes/MononopolyWall.webp);">
+                    <div class="card-content white-text">
+                        <div class="login-form">
+                            <form action="login.php" method="POST">
+                                <h1 class="center">LOGIN</h1>
+                                <div class="content">
+                                    <div class="input-field">
+                                        <input type="text" name="username" placeholder="Username" autocomplete="nope"> <!-- Add name attribute for username -->
+                                    </div>
+                                    <div class="input-field">
+                                        <input type="password" name="password" placeholder="Password" autocomplete="new-password"> <!-- Add name attribute for password -->
+                                        <div id="notification" style="color: #FF0000;"></div>
+                                        <div class="action">
+                                            <button type="submit" name="register">Register</button>
+                                            <button type="submit">Sign in</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-        </form>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const urlParams = new URLSearchParams(window.location.search);
-            const notification = urlParams.get('notification');
 
-            const notificationElement = document.getElementById('notification');
 
-            if (notification === 'success') {
-                notificationElement.innerText = "Login successful. Redirecting to homepage...";
-                setTimeout(function () {
-                    window.location.href = "homepage.php";
-                }, 3000);
-            } else if (notification === 'error') {
-                // Display error message
-                notificationElement.innerText = "Invalid username or password.";
-                setTimeout(function () {
-                    notificationElement.innerText = "";
-                }, 3000);
-            }
-        });
-    </script>
+    <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 
 </html>
