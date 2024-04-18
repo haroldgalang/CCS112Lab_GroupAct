@@ -5,4 +5,5 @@ window.addEventListener("load", function () {
 
 $(document).ready(function () {
   $('.parallax').parallax();
+  $('.sidenav').sidenav();
 });
