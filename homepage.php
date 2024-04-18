@@ -1,5 +1,6 @@
 <?php
 include_once("config.php");
+
 $result = mysqli_query($mysqli, "SELECT * FROM tbl_sticker ORDER BY sticker_id DESC");
 $result2 = mysqli_query($mysqli, "SELECT * FROM tbl_sticker ORDER BY sticker_id DESC");
 echo '<script type="text/JavaScript">  
@@ -45,6 +46,11 @@ $(document).ready(function () {
                     <li>
                         <a href="#!" class="dropdown-trigger" data-target="dropdown1"><i class="material-icons">more_vert</i></a>
                     </li>
+                    <li>
+                        <a href="viewcart.php" class="white-text">
+                    <i class="material-icons white-text">shopping_cart</i>
+                        </a>
+</li>
                 </ul>
             </div>
         </div>
@@ -62,7 +68,8 @@ $(document).ready(function () {
             </div>
         </li>
         <li><a href="#!" class="white-text"><i class="material-icons white-text">account_circle</i>My Account</a></li>
-        <li><a href="#!" class="white-text"><i class="material-icons white-text">exit_to_app</i>Logout</a></li>
+        <li><a href="logout.php" class="white-text"><i class="material-icons white-text">exit_to_app</i>Logout</a></li>
+
         <li>
             <div class="divider"></div>
         </li>
@@ -99,7 +106,8 @@ $(document).ready(function () {
                 echo '<h5 class="black-text truncate">₱' . $item_data1['sticker_price'] . "</h5>";
                 echo "<h6 class='black-text truncate'>Stocks: " . $item_data1['sticker_quantity'] . "</h6>";
                 echo "</div>";
-                echo "<div class='card-action'><a href='#'><i class='material-icons'>add_shopping_cart</i>add to cart</a></div></div></div>";
+                echo "<div class='card-action'><a href='addtocart.php?sticker_id=" . $item_data1['sticker_id'] . "'><i class='material-icons'>add_shopping_cart</i>add to cart</a></div></div></div>";
+
             }
             ?>
         </div>
