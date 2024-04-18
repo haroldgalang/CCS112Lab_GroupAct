@@ -16,8 +16,15 @@
 
 body {
   font-family: "Cabin", sans-serif;
+  
 }
 #book-cover {
   object-fit: cover;
   height: 220px;
+}
+
+body {
+  background-image: url('pnc.png');
+  background-size: cover;
+  background-position: center;
 }
