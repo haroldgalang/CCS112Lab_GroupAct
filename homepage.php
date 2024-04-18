@@ -46,8 +46,8 @@ $result2 = mysqli_query($mysqli, "SELECT * FROM tbl_sticker ORDER BY sticker_id 
             }
             ?>
         </div>
-        
-        <a class="waves-effect waves-light btn-large z-depth-2" href="add.php"><i class="material-icons right">add</i>Add Sticker</a>
+
+        <a class="waves-effect waves-light btn-large z-depth-2" href="add.php"><i class="material-icons right">shop</i>Sell Stickers</a>
     </div>
 
     <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>

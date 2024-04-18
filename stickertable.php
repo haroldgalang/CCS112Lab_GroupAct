@@ -21,6 +21,7 @@ $result2 = mysqli_query($mysqli, "SELECT * FROM tbl_sticker ORDER BY sticker_id 
     <div class="container">
         <h1>Sticker's Table</h1>
         <a class="waves-effect waves-light btn-large z-depth-2" href="add.php"><i class="material-icons right">add</i>Add Sticker</a>
+        <a class="waves-effect waves-light btn-large z-depth-2 right" href="homepage.php"><i class="material-icons right">arrow_back</i>Back</a>
         <table class="responsive-table highlight">
             <thead>
                 <tr>
