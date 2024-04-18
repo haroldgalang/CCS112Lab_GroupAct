@@ -20,7 +20,7 @@
     <div class="parallax-container z-depth-2">
         <div class="parallax"><img class="responsive-img" src="images/books.jpg"></div>
         <div class="container">
-            <h1 class="center" style="font-family: 'Kaisei Tokumin', serif; color: #6d4c41;">Book Store</h1>
+            <h1 class="center" style="font-family: 'Kaisei Tokumin', serif; color: #6d4c41;">Sticker Shop</h1>
         </div>
     </div>
 
@@ -31,7 +31,6 @@
             </div>
             <div class="col s12 m12 l12">
                 <br>
-                <blockquote>This is a simple Library Management and Book Store System. This web-based program offers Crud ADD, EDIT and DELETE having the abilty for the user to interact with the library. This is a prelim project to submit in this subject in CCS112: Applications Development and Emerging Technologies. Thank you for using this website!</blockquote>
             </div>
         </div>
     </div>

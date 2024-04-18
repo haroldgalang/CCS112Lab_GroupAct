@@ -26,6 +26,7 @@ $result2 = mysqli_query($mysqli, "SELECT * FROM tbl_sticker ORDER BY sticker_id 
     <div class="container">
         <h2>Stickers</h2>
     </div>
+    
     <div class="container">
         <div class="row">
             <?php
@@ -45,58 +46,9 @@ $result2 = mysqli_query($mysqli, "SELECT * FROM tbl_sticker ORDER BY sticker_id 
             }
             ?>
         </div>
+
+        <a class="waves-effect waves-light btn-large z-depth-2" href="add.php"><i class="material-icons right">shop</i>Sell Stickers</a>
     </div>
-
-
-    <div class="container">
-
-        <a class="waves-effect waves-light btn-large z-depth-2" href="add.php"><i class="material-icons right">add</i>Add Sticker</a>
-        <table class="responsive-table highlight">
-            <thead>
-                <tr>
-                    <th>
-                        Sticker ID
-                    </th>
-                    <th>
-                        Sticker Name
-                    </th>
-                    <th>
-                        Sticker Seller
-                    </th>
-                    <th>
-                        Sticker Set
-                    </th>
-                    <th>
-                        Price
-                    </th>
-                    <th>
-                        Stocks
-                    </th>
-                    <th>Update</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                while ($item_data = mysqli_fetch_array($result)) {
-                    echo
-                    "<tr>
-                        <td>" . $item_data['sticker_id'] . "</td>
-                        <td>" . $item_data['sticker_name'] . "</td>
-                        <td>" . $item_data['sticker_seller'] . "</td>
-                        <td>" . $item_data['sticker_set'] . "</td>
-                        <td>₱" . $item_data['sticker_price'] . "</td>
-                        <td>" . $item_data['sticker_quantity'] . "</td>
-                        <td>
-                            <a href='edit.php?sticker_id=$item_data[sticker_id]'>Edit</a> | <a href='delete.php?sticker_id=$item_data[sticker_id]'>Delete</a>
-                        </td>
-                    </tr>";
-                }
-                ?>
-            </tbody>
-        </table>
-    </div>
-
-    <blockquote style="font-weight: lighter;">This is a simple Library Management and Book Store System. This web-based program offers Crud ADD, EDIT and DELETE having the abilty for the user to interact with the library. This is a prelim project to submit in this subject in CCS112: Applications Development and Emerging Technologies. Thank you for using this website!</blockquote>
 
     <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
     <script type="text/javascript" src="js/script.js"></script>

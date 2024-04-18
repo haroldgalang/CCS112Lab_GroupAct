@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
             $newImageName .= '.' . $imageExtension;
 
             move_uploaded_file($tmpName, 'images/coverdump' . $newImageName);
-            $result = mysqli_query($mysqli, "INSERT INTO tbl_sticker(sticker_name, sticker_price, sticker_quantity, sticker_seller, sticker_set, image) VALUES('$sticker_name', '$sticker_price', '$sticker_quantity', '$sticker_seller', '$sticker_set', '$newImageName')" );
+            $result = mysqli_query($mysqli, "INSERT INTO tbl_sticker(sticker_name, sticker_price, sticker_quantity, sticker_seller, sticker_set, image) VALUES('$sticker_name', '$sticker_price', '$sticker_quantity', '$sticker_seller', '$sticker_set', '$newImageName')");
             include_once('config.php');
             echo
             "<script> alert('Successfully Added A New Sticker');
@@ -55,14 +55,19 @@ if (isset($_POST['submit'])) {
 <body class="grey darken-4 white-text text-darken-3">
     <div class="container">
 
-        <h1>Add Book</h1>
+        <div class="col s12 m12 l2 offset-l10">
+            <br>
+            <a href="homepage.php" class="waves-effect waves-light btn">Back<i class="material-icons right">arrow_back</i></a>
+        </div>
+
+        <h1>Add Sticker</h1>
         <div class="row">
             <div class="col s12 m12 l2 offset-l10">
-                <a href="homepage.php" class="waves-effect waves-light btn">Back<i class="material-icons right">arrow_back</i></a>
+                <a href="stickertable.php" class="waves-effect waves-light btn">See All<i class="material-icons left">shop</i></a>
             </div>
         </div>
-        <form action="" method="post" name="addForm" autocomplete="off" enctype="multipart/form-data">
 
+        <form action="" method="post" name="addForm" autocomplete="off" enctype="multipart/form-data">
 
             <label for="sticker_name">Sticker Name</label>
             <input type="text" name="sticker_name" required class="white-text">
