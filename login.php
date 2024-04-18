@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container">
         <div class="row">
             <div class="col l6 offset-l3">
-                <div class="card" style="background-image: url(images/imageRes/MononopolyWall.webp);">
+                <div class="card blue darken-4">
                     <div class="card-content white-text">
                         <div class="login-form">
                             <form action="login.php" method="POST">
@@ -82,8 +82,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
     </div>
-
-
 
     <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
