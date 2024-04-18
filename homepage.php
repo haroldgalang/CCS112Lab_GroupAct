@@ -1,5 +1,6 @@
 <?php
 include_once("config.php");
+
 $result = mysqli_query($mysqli, "SELECT * FROM tbl_sticker ORDER BY sticker_id DESC");
 $result2 = mysqli_query($mysqli, "SELECT * FROM tbl_sticker ORDER BY sticker_id DESC");
 echo '<script type="text/JavaScript">  
@@ -28,8 +29,8 @@ $(document).ready(function () {
         <div class="parallax"><img class="responsive-img" src="images/imageRes/monoWallpaper.png"></div>
     </div>
 
-    <section>
-        <nav class="pushpin-demo-nav" data-target="pinnednavbar" style="z-index: 90;" id="navMain">
+ <section>
+    <nav class="pushpin-demo-nav" data-target="pinnednavbar" style="z-index: 90;" id="navMain">
             <div class="nav-wrapper grey darken-4 z-depth-4">
                 <div>
                     <a href="#top-page" class="brand-logo center">Monopoly Go Organization</a>
@@ -60,7 +61,11 @@ $(document).ready(function () {
                     <a href="#name"><span class="white-text name">OG Notail</span></a>
                     <a href="#email"><span class="white-text email">bigdaddynotail@gmail.com</span></a>
                 </div>
-            </li>
+                <a href="#user"><img class="circle" src="https://th.bing.com/th/id/OIP.3_rmocxtbNOqkWF4cCFkdwAAAA?rs=1&pid=ImgDetMain"></a>
+                <a href="#name"><span class="white-text name">OG Notail</span></a>
+                <a href="#email"><span class="white-text email">bigdaddynotail@gmail.com</span></a>
+            </div>
+        </li>
             <li><a href="#!" class="white-text"><i class="material-icons white-text">account_circle</i>My Account</a></li>
             <li><a href="#!" class="white-text"><i class="material-icons white-text">exit_to_app</i>Logout</a></li>
             <li>
@@ -83,30 +88,30 @@ $(document).ready(function () {
             <h2>Stickers</h2>
         </div>
 
-        <div class="container">
-            <div class="row">
-                <?php
-                while ($item_data1 = mysqli_fetch_array($result2)) {
-                    echo "<div class='col s6 m7 l3'>";
-                    echo "<div class='card' style='height: auto; width: 200px;'>";
-                    echo "<div class='card-image'>";
-                    echo "<img src='images/coverdump" . $item_data1['image'] . "'style='object-fit: cover; height: 275px;'>";
-                    echo '<span class="card-title truncate">' . $item_data1['sticker_name'];
-                    echo '</span></div> <div class="card-content" style="height: 150px">';
-                    echo "<p class='grey-text truncate right-align'>id: " . $item_data1['sticker_id'] . "</p>";
-                    echo '<p class="black-text truncate">';
-                    echo "<i class='material-icons right-align'>store_mall_directory</i>" . $item_data1['sticker_seller'] . "</p>";
-                    echo '<h5 class="black-text truncate">₱' . $item_data1['sticker_price'] . "</h5>";
-                    echo "<p class='black-text truncate'>Stocks: " . $item_data1['sticker_quantity'] . "</p>";
-                    echo "</div>";
-                    echo "<div class='card-action'><a href='#'><i class='material-icons'>add_shopping_cart</i>add to cart</a></div></div></div>";
-                }
-                ?>
+    <div class="container">
+        <div class="row">
+            <?php
+            while ($item_data1 = mysqli_fetch_array($result2)) {
+                echo "<div class='col s6 m7 l3'>";
+                echo "<div class='card' style='height: auto; width: 200px;'>";
+                echo "<div class='card-image'>";
+                echo "<img src='images/coverdump" . $item_data1['image'] . "'style='object-fit: cover; height: 275px;'>";
+                echo '<span class="card-title truncate">' . $item_data1['sticker_name'];
+                echo '</span></div> <div class="card-content" style="height: 140px">';
+                echo '<p class="black-text truncate">';
+                echo "<i class='material-icons right-align'>store_mall_directory</i>" . $item_data1['sticker_seller'] . "</p>";
+                echo '<h5 class="black-text truncate">₱' . $item_data1['sticker_price'] . "</h5>";
+                echo "<h6 class='black-text truncate'>Stocks: " . $item_data1['sticker_quantity'] . "</h6>";
+                echo "</div>";
+                echo "<div class='card-action'><a href='addtocart.php?sticker_id=" . $item_data1['sticker_id'] . "'><i class='material-icons'>add_shopping_cart</i>add to cart</a></div></div></div>";
+
+            }
+            ?>
             </div>
             <a class="waves-effect waves-light btn-large z-depth-2" href="add.php"><i class="material-icons right">shop</i>Sell Stickers</a>
+
         </div>
     </section>
-
 
     <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
